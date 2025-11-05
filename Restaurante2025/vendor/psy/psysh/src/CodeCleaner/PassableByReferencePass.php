@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2025 Justin Hileman
+ * (c) 2012-2023 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +21,6 @@ use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\PropertyFetch;
 use PhpParser\Node\Expr\StaticCall;
 use PhpParser\Node\Expr\Variable;
-use PhpParser\Node\VariadicPlaceholder;
 use Psy\Exception\FatalErrorException;
 
 /**
@@ -44,7 +43,7 @@ class PassableByReferencePass extends CodeCleanerPass
         if ($node instanceof FuncCall) {
             // if function name is an expression or a variable, give it a pass for now.
             if ($node->name instanceof Expr || $node->name instanceof Variable) {
-                return null;
+                return;
             }
 
             $name = (string) $node->name;
@@ -57,15 +56,11 @@ class PassableByReferencePass extends CodeCleanerPass
                 $refl = new \ReflectionFunction($name);
             } catch (\ReflectionException $e) {
                 // Well, we gave it a shot!
-                return null;
+                return;
             }
 
             $args = [];
             foreach ($node->args as $position => $arg) {
-                if ($arg instanceof VariadicPlaceholder) {
-                    continue;
-                }
-
                 $args[$arg->name !== null ? $arg->name->name : $position] = $arg;
             }
 
@@ -78,19 +73,13 @@ class PassableByReferencePass extends CodeCleanerPass
                 }
             }
         }
-
-        return null;
     }
 
     private function isPassableByReference(Node $arg): bool
     {
-        if (!\property_exists($arg, 'value')) {
-            return false;
-        }
-
         // Unpacked arrays can be passed by reference
         if ($arg->value instanceof Array_) {
-            return \property_exists($arg, 'unpack') && $arg->unpack;
+            return $arg->unpack;
         }
 
         // FuncCall, MethodCall and StaticCall are all PHP _warnings_ not fatal errors, so we'll let

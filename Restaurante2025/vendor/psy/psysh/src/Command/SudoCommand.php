@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2025 Justin Hileman
+ * (c) 2012-2023 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,10 +24,10 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class SudoCommand extends Command
 {
-    private Readline $readline;
-    private CodeArgumentParser $parser;
-    private NodeTraverser $traverser;
-    private Printer $printer;
+    private $readline;
+    private $parser;
+    private $traverser;
+    private $printer;
 
     /**
      * {@inheritdoc}
@@ -113,8 +113,7 @@ HELP
         $nodes = $this->traverser->traverse($this->parser->parse($code));
 
         $sudoCode = $this->printer->prettyPrint($nodes);
-
-        $shell = $this->getShell();
+        $shell = $this->getApplication();
         $shell->addCode($sudoCode, !$shell->hasCode());
 
         return 0;
