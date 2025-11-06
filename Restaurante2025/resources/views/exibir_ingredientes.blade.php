@@ -114,17 +114,17 @@
 
                             <p>
                             <h5>Celular:</h5>
-                            (18) 99653-8306
+                            (18) 99xxx-xxxx
                             </p>
 
                             <p>
                             <h5>Email:</h5>
-                            9923@fai.com.br
+                            xxxx@fai.com.br
                             </p>
 
                             <p>
                             <h5>Endereço:</h5>
-                            Rua Joaquim Alves Landim, 283 - Lucélia/SP
+                            Rua abc, xxx - Adamantina/SP
                             </p>
                         </div>
                     </div>

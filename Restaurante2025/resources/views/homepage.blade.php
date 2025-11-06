@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sol de Verão - Início</title>
+    <title>Pastel de cria - Início</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -32,7 +32,7 @@
                             <ul>
                                 <li><a href="cadastro_pedidos">Pedidos</a></li>
                                 <li><a href="cadastro_ingredientes">Ingredientes</a></li>
-                                <li><a href="cadastro_pratos">Pratos</a></li>
+                                <li><a href="cadastro_pratos">Pasteis</a></li>
                             </ul>
                         </li>
 
@@ -40,7 +40,7 @@
                             <ul>
                                 <li><a href="exibir_pedidos">Pedidos</a></li>
                                 <li><a href="exibir_ingredientes">Ingredientes</a></li>
-                                <li><a href="exibir_pratos">Pratos</a></li>
+                                <li><a href="exibir_pratos">Pasteis</a></li>
                                 <li><a href="exibir_relatorio">Relatórios</a></li>
                             </ul>
                         </li>
@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row fullscreen align-items-center justify-content-between">
                 <div class="col-lg-12 banner-content">
-                    <h1 class="text-white text-center">“ONDE CADA GOLE CONTA UMA HISTÓRIA”</h1>
+                    <h1 class="text-white text-center">“Pasteis quentinhos hmmmmmm.”</h1>
 
                     <div class="d-flex justify-content-center">
                         <a href="#sobre" class="primary-btn text-uppercase">Conheça melhor</a>
@@ -153,17 +153,17 @@
 
                             <p>
                             <h5>Celular:</h5>
-                            (18) 99653-8306
+                            (18) 99xxx-xxxx
                             </p>
 
                             <p>
                             <h5>Email:</h5>
-                            9923@fai.com.br
+                            xxxx@fai.com.br
                             </p>
 
                             <p>
                             <h5>Endereço:</h5>
-                            Rua Joaquim Alves Landim, 283 - Lucélia/SP
+                            Rua abc, xxx - Adamantina/SP
                             </p>
                         </div>
                     </div>
